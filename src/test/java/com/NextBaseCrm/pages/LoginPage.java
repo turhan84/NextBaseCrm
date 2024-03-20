@@ -1,6 +1,7 @@
 package com.NextBaseCrm.pages;
 
 
+import com.NextBaseCrm.utilities.ConfigurationReader;
 import com.NextBaseCrm.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -24,10 +25,19 @@ public class LoginPage {
     public WebElement loginBtn;
 
     public void login(String username, String password){
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         this.username.sendKeys(username);
         this.password.sendKeys(password);
         this.loginBtn.click();
     }
+
+    public void login (){
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        this.username.sendKeys(ConfigurationReader.getProperty("helpDesk_username"));
+        this.password.sendKeys(ConfigurationReader.getProperty("helpDesk_password"));
+        this.loginBtn.click();
+    }
+
 
     @FindBy(xpath = "//div[contains(@class, 'errortext')]")
     public WebElement errorMessage;
