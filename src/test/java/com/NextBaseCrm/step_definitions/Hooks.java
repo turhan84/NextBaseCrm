@@ -24,9 +24,9 @@ public class Hooks {
     @Before (order = 1)
     public void setupMethod(){
 
-        System.out.println("Before method running...");
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+       // System.out.println("Before method running...");
+       // Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+       // Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 
  

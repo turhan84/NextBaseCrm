@@ -19,14 +19,10 @@ public class LoginStepDefs {
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
 
-    @Given("The login page is displayed")
-    public void the_login_page_is_displayed() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-    }
 
     @When("The user enters valid username {string} and password {string}")
     public void the_user_enters_valid_username_and_password(String username, String password) {
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         login.username.sendKeys(username);
         login.password.sendKeys(password);
 
