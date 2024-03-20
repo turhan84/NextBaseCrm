@@ -3,6 +3,8 @@ package com.NextBaseCrm.step_definitions;
 import com.NextBaseCrm.pages.LoginPage;
 import com.NextBaseCrm.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class LoginStepDefs {
 
