@@ -23,11 +23,13 @@ public class Hooks {
     //import the @Before coming from io.cucumber.java
     @Before (order = 1)
     public void setupMethod(){
-
+/*
         System.out.println("Before method running...");
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
+
+ */
 
     }
 
@@ -51,7 +53,7 @@ public class Hooks {
 
 
 
-        BrowserUtils.sleep(2);
+       // BrowserUtils.sleep(2);
         Driver.closeDriver();
 
     }
