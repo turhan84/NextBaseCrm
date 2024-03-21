@@ -21,7 +21,7 @@ public class AppreciationPage {
 
 
     @FindBy()
-    public WebElement r;
+    public WebElement f;
 
 
 
