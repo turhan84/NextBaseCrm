@@ -14,10 +14,10 @@ public class AppreciationPage {
     public WebElement a;
 
     @FindBy()
-    public WebElement b;
+    public WebElement d;
 
     @FindBy()
-    public WebElement c;
+    public WebElement e;
 
 
     @FindBy()
