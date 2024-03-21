@@ -1,6 +1,5 @@
 @B32G1-221
 Feature: Default
-
 	
 	@B32G1-215
 	Scenario Outline: Verify that the user can log in with valid credentials and land on the home page after successful login.
