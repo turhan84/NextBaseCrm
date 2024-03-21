@@ -1,61 +1,50 @@
 package com.NextBaseCrm.pages;
 
 
-import com.NextBaseCrm.utilities.BrowserUtils;
 import com.NextBaseCrm.utilities.ConfigurationReader;
 import com.NextBaseCrm.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class LoginPage {
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+
     public LoginPage(){
-        PageFactory.initElements(Driver.getDriver(), this);
+
+        PageFactory.initElements(Driver.getDriver(),this);
     }
 
-
     @FindBy(name = "USER_LOGIN")
-    public WebElement usernameInput;
+    public WebElement username;
 
     @FindBy(name = "USER_PASSWORD")
-    public WebElement passwordInput;
+    public WebElement password;
 
     @FindBy(className = "login-btn")
     public WebElement loginBtn;
 
-    @FindBy(className = "errortext")
-    public WebElement loginErrMsg;
-
-    @FindBy(className = "menu-item-link")
-    public WebElement menuItemLink;
-
-    //CheckBox Control
-
-    @FindBy(id = "USER_REMEMBER")
-    public WebElement checkBox;
-
-    @FindBy(className = "login-link-forgot-pass")
-    public WebElement forgotPasswordLink;
-
     public void login(String username, String password){
-
-        usernameInput.sendKeys(username);
-        passwordInput.sendKeys(password);
-        loginBtn.click();
-        BrowserUtils.waitForTitleContains("Portal");
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        this.username.sendKeys(username);
+        this.password.sendKeys(password);
+        this.loginBtn.click();
     }
 
-    public void login(){
-        usernameInput.sendKeys(ConfigurationReader.getProperty("hr_username"));
-        passwordInput.sendKeys(ConfigurationReader.getProperty("hr_password"));
-        loginBtn.click();
-        BrowserUtils.waitForTitleContains("Portal");
-
+    public void login (){
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        this.username.sendKeys(ConfigurationReader.getProperty("helpDesk_username"));
+        this.password.sendKeys(ConfigurationReader.getProperty("helpDesk_password"));
+        this.loginBtn.click();
     }
+
+
+    @FindBy(xpath = "//div[contains(@class, 'errortext')]")
+    public WebElement errorMessage;
+
+    @FindBy(xpath = "//input[@name='USER_PASSWORD']")
+    public WebElement checkbox;
+
+
 
 }
