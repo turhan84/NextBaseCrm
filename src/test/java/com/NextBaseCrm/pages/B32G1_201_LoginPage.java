@@ -3,14 +3,13 @@ package com.NextBaseCrm.pages;
 
 import com.NextBaseCrm.utilities.ConfigurationReader;
 import com.NextBaseCrm.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class B32G1_201_LoginPage {
 
-    public LoginPage(){
+    public B32G1_201_LoginPage(){
 
         PageFactory.initElements(Driver.getDriver(),this);
     }

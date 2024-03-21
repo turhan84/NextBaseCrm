@@ -1,6 +1,6 @@
 package com.NextBaseCrm.step_definitions;
 
-import com.NextBaseCrm.pages.LoginPage;
+import com.NextBaseCrm.pages.B32G1_201_LoginPage;
 import com.NextBaseCrm.pages.MyProfilePage;
 import com.NextBaseCrm.pages.PortalPage;
 import com.NextBaseCrm.utilities.BrowserUtils;
@@ -20,7 +20,7 @@ public class MyProfileStepDefs {
     @When("the user logs in with {string} and {string}")
     public void theUserLogsInWithAnd(String username, String password) {
 
-        new LoginPage().login(username, password);
+        new B32G1_201_LoginPage().login(username, password);
     }
 
     @Then("the user navigates to  My Profile on the user page")
