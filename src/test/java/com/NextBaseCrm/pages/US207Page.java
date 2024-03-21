@@ -18,4 +18,7 @@ public class US207Page {
 
     @FindBy(xpath = "//span[@class='main-buttons-item-text-title']")
     public List<WebElement>allTopModules;
+
+    @FindBy(id="pagetitle")
+    public WebElement companyStructure;
 }

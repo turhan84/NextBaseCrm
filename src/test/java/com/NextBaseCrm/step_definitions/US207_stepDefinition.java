@@ -36,33 +36,22 @@ public class US207_stepDefinition {
         us207Page.employeesLink.click();
     }
 
-
     @Then("user sees the following modules")
     public void user_sees_the_following_modules(List<String> expectedOptions) {
       //  BrowserUtils.waitForTitleContains("Employees");
         List<String>actualOptions = new ArrayList<>();
         for(WebElement eachTopModule : us207Page.allTopModules){
             actualOptions.add(eachTopModule.getText());
-            //eachTopModule.isDisplayed();
+
         }
         BrowserUtils.sleep(2);
         Assert.assertEquals(actualOptions,expectedOptions);
     }
 
+    @Then("user sees the Company Structure should be displayed by default")
+    public void userSeesTheCompanyStructureShouldBeDisplayedByDefault() {
 
-
-    @Given("the user is logged in to the Employees Module")
-    public void the_user_is_logged_in_to_the_employees_module() {
-
+        us207Page.companyStructure.isDisplayed();
     }
-    @When("the user clicks on the Employees Module")
-    public void the_user_clicks_on_the_employees_module() {
-
-    }
-    @Then("the Company Structure view should be displayed by default")
-    public void the_company_structure_view_should_be_displayed_by_default() {
-
-    }
-
 }
 

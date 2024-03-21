@@ -21,6 +21,6 @@
 
   @B32G1-247
   Scenario: Verify that the user views the Company Structure as default by clicking the Employees Module.
-    Given the user is logged in to the Employees Module
-    When the user clicks on the Employees Module
-    Then the Company Structure view should be displayed by default
+    Given the user is logged in
+    When user sees Employees option and click it.
+    Then user sees the Company Structure should be displayed by default
