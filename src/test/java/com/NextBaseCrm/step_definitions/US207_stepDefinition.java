@@ -1,26 +1,23 @@
 package com.NextBaseCrm.step_definitions;
-import com.NextBaseCrm.pages.LoginPage;
+import com.NextBaseCrm.pages.B32G1_201_LoginPage;
 import com.NextBaseCrm.pages.US207Page;
 import com.NextBaseCrm.utilities.BrowserUtils;
-import com.NextBaseCrm.utilities.ConfigurationReader;
 import com.NextBaseCrm.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class US207_stepDefinition {
 
 
 
-    LoginPage login = new LoginPage();
+    B32G1_201_LoginPage login = new B32G1_201_LoginPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
     US207Page us207Page = new US207Page();
 

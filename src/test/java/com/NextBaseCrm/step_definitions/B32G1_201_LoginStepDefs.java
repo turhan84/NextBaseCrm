@@ -1,6 +1,6 @@
 package com.NextBaseCrm.step_definitions;
 
-import com.NextBaseCrm.pages.LoginPage;
+import com.NextBaseCrm.pages.B32G1_201_LoginPage;
 import com.NextBaseCrm.utilities.ConfigurationReader;
 import com.NextBaseCrm.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -15,8 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class LoginStepDefs {
-    LoginPage login = new LoginPage();
+public class B32G1_201_LoginStepDefs {
+    B32G1_201_LoginPage login = new B32G1_201_LoginPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
 

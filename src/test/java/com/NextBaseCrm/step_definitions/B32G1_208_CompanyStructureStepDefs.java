@@ -1,7 +1,7 @@
 package com.NextBaseCrm.step_definitions;
 
 import com.NextBaseCrm.pages.B32G1_208_CompanyStructurePages;
-import com.NextBaseCrm.pages.LoginPage;
+import com.NextBaseCrm.pages.B32G1_201_LoginPage;
 import com.NextBaseCrm.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 
 public class B32G1_208_CompanyStructureStepDefs {
 
-    LoginPage login = new LoginPage();
+    B32G1_201_LoginPage login = new B32G1_201_LoginPage();
 
     B32G1_208_CompanyStructurePages structure = new B32G1_208_CompanyStructurePages();
 
