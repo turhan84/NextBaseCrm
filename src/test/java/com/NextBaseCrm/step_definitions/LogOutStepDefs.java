@@ -1,6 +1,6 @@
 package com.NextBaseCrm.step_definitions;
 
-import com.NextBaseCrm.pages.LoginPage;
+import com.NextBaseCrm.pages.B32G1_201_LoginPage;
 import com.NextBaseCrm.pages.LogoutPage;
 
 import io.cucumber.java.en.Given;
@@ -10,7 +10,7 @@ import org.junit.Assert;
 
 public class LogOutStepDefs {
 
-    LoginPage loginPage = new LoginPage();
+    B32G1_201_LoginPage loginPage = new B32G1_201_LoginPage();
     LogoutPage logoutPage=new LogoutPage();
     @Given("the user is logged in to the app")
     public void theUserIsLoggedInToTheApp() {
