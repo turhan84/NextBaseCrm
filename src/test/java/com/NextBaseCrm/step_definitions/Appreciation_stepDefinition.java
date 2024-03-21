@@ -1,7 +1,6 @@
 package com.NextBaseCrm.step_definitions;
 
 import com.NextBaseCrm.pages.AppreciationPage;
-import com.NextBaseCrm.pages.LoginPage;
 import com.NextBaseCrm.utilities.BrowserUtils;
 import com.NextBaseCrm.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -12,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 public class Appreciation_stepDefinition {
 
-    LoginPage loginPage=new LoginPage();
+
     AppreciationPage appreciationPage=new AppreciationPage();
 
     @Given("user is on the Appreciation page")
