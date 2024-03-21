@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/NextBaseCrm/step_definitions",
-        dryRun = false,
-        tags = "@B32G1-228",
+        dryRun = true,
+        tags = "@B32G1-246",
         publish = true //generating a report with public link
 )
 public class CukesRunner {}
