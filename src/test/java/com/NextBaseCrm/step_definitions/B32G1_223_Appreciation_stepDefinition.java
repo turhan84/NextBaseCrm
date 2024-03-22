@@ -1,6 +1,6 @@
 package com.NextBaseCrm.step_definitions;
 
-import com.NextBaseCrm.pages.AppreciationPage;
+import com.NextBaseCrm.pages.B32G1_223_AppreciationPage;
 import com.NextBaseCrm.utilities.BrowserUtils;
 import com.NextBaseCrm.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -9,10 +9,10 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class Appreciation_stepDefinition {
+public class B32G1_223_Appreciation_stepDefinition {
 
 
-    AppreciationPage appreciationPage=new AppreciationPage();
+    B32G1_223_AppreciationPage appreciationPage=new B32G1_223_AppreciationPage();
 
     @Given("user is on the Appreciation page")
     public void user_is_on_the_appreciation_page() {

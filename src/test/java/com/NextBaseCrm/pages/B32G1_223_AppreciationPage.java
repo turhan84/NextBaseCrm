@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AppreciationPage {
-    public AppreciationPage(){
+public class B32G1_223_AppreciationPage {
+    public B32G1_223_AppreciationPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
