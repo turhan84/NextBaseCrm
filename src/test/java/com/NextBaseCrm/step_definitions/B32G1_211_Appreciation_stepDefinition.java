@@ -1,7 +1,6 @@
 package com.NextBaseCrm.step_definitions;
 
-import com.NextBaseCrm.pages.B32G1_224_AppreciationPage;
-import com.NextBaseCrm.utilities.BrowserUtils;
+import com.NextBaseCrm.pages.B32G1_211_AppreciationPage;
 import com.NextBaseCrm.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,10 +9,10 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class B32G1_224_Appreciation_stepDefinition {
+public class B32G1_211_Appreciation_stepDefinition {
 
 
-    B32G1_224_AppreciationPage appreciationPage = new B32G1_224_AppreciationPage();
+    B32G1_211_AppreciationPage appreciationPage = new B32G1_211_AppreciationPage();
 
     @Given("user is on the Appreciation page")
     public void user_is_on_the_appreciation_page() {
@@ -53,27 +52,39 @@ public class B32G1_224_Appreciation_stepDefinition {
     }
 
 
-    @When("user can send an appreciation by filling in the mandatory fields")
-    public void user_can_send_an_appreciation_by_filling_in_the_mandatory_fields() {
+    @Then("verify that the user can cancel sending appreciation at any time before sending")
+    public void verify_that_the_user_can_cancel_sending_appreciation_at_any_time_before_sending() {
         WebElement iframe = Driver.getDriver().findElement(By.className("bx-editor-iframe"));
         Driver.getDriver().switchTo().frame(iframe);
 
         appreciationPage.appreciationText.sendKeys("Hello");
         Driver.getDriver().switchTo().parentFrame();
+        appreciationPage.cancelBtn.click();
+        appreciationPage.moreDropdown.click();
+        appreciationPage.appreciationLink.click();
+
+        Driver.getDriver().switchTo().frame(iframe);
+        Assert.assertFalse(appreciationPage.appreciationText.isDisplayed());
+        //Driver.getDriver().switchTo().parentFrame();
+
+    }
+
+    @When("user can send an appreciation by filling in the mandatory fields")
+    public void user_can_send_an_appreciation_by_filling_in_the_mandatory_fields() {
+
         appreciationPage.sendBtn.click();
 
-        BrowserUtils.sleep(1);
+        Assert.assertEquals(appreciationPage.appreciationText,appreciationPage.commentCheck.getText());
+
 
     }
 
     @When("user should to see Mandatory fields: Message content & To")
     public void user_should_to_see_mandatory_fields_message_content_to() {
 
-    }
-
-
-    @Then("verify that the user can cancel sending appreciation at any time before sending")
-    public void verify_that_the_user_can_cancel_sending_appreciation_at_any_time_before_sending() {
 
     }
+
+
+
 }

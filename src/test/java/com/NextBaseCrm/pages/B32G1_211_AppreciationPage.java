@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class B32G1_224_AppreciationPage {
-    public B32G1_224_AppreciationPage(){
+public class B32G1_211_AppreciationPage {
+    public B32G1_211_AppreciationPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -39,6 +39,12 @@ public class B32G1_224_AppreciationPage {
     @FindBy(xpath = "//span[text()='The message title is not specified']")
     public WebElement errMessage;
 
+
+    @FindBy(css = "button[id='blog-submit-button-cancel']")
+    public WebElement cancelBtn;
+
+    @FindBy(xpath = "(//div[@class='feed-post-text-block-inner-inner'])[1]")
+    public WebElement commentCheck;
 
 
 
