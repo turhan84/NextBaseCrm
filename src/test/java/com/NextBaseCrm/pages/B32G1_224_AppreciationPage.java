@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class B32G1_223_AppreciationPage {
-    public B32G1_223_AppreciationPage(){
+public class B32G1_224_AppreciationPage {
+    public B32G1_224_AppreciationPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -23,6 +23,21 @@ public class B32G1_223_AppreciationPage {
 
     @FindBy(css = "button[id='blog-submit-button-save']")
     public WebElement sendBtn;
+
+    @FindBy(css = "div[class='feed-post-text-block']")
+    public WebElement appreciationTextInComment;
+
+    @FindBy(xpath = "//span[text()='All employees']")
+    public WebElement allEmployees;
+
+    @FindBy(css = "span[class='feed-add-post-del-but']")
+    public WebElement allEmployeesCloseBtn;
+
+    @FindBy(xpath = "//span[text()='Please specify at least one person.']")
+    public WebElement errSpecify;
+
+    @FindBy(xpath = "//span[text()='The message title is not specified']")
+    public WebElement errMessage;
 
 
 
