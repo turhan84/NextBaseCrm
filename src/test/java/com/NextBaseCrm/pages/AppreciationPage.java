@@ -10,18 +10,19 @@ public class AppreciationPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy()
-    public WebElement a;
 
-    @FindBy()
-    public WebElement d;
+    @FindBy(xpath = "//span[@id='feed-add-post-form-link-text']")
+    public WebElement moreDropdown;
 
-    @FindBy()
-    public WebElement e;
+    @FindBy(xpath = "(//span[@class='menu-popup-item-text'])[2]")
+    public WebElement appreciationLink;
 
 
-    @FindBy()
-    public WebElement f;
+    @FindBy(xpath = "//body[@contenteditable='true']")
+    public WebElement appreciationText;
+
+    @FindBy(css = "button[id='blog-submit-button-save']")
+    public WebElement sendBtn;
 
 
 
