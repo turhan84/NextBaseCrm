@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class PortalPage {
-    public PortalPage() {
+public class B32G1_234_PortalPage {
+    public B32G1_234_PortalPage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }

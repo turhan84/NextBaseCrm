@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MyProfilePage {
+public class B32G1_234_MyProfilePage {
 
-    public MyProfilePage() {
+    public B32G1_234_MyProfilePage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
