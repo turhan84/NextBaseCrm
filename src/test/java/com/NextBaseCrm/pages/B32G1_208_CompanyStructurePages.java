@@ -11,11 +11,29 @@ public class B32G1_208_CompanyStructurePages {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[@title='Employees']")
-    public WebElement EmployeeBtn;
+    @FindBy(linkText = "Employees")
+    public WebElement employeeMenuBtn;
 
-    @FindBy(xpath= "(//a[@class='main-buttons-item-link'])[1]")
+   // @FindBy(xpath = "//div[@id='top_menu_id_company_3271504278']//a[contains(@href, '/company/vis_structure.php')]")
+
+    @FindBy(xpath = "//a[contains(text(), 'Company Structure')]")
     public WebElement companyStructureOpt;
+
+    @FindBy(xpath = "//div[@id='pagetitle-menu']//a[@href='javascript:void(0)']")
+
+    public WebElement addDepartmentBtn;
+
+    @FindBy(xpath = "//input[@id='NAME']")
+    public WebElement departmentNameBox;
+
+    @FindBy(css = ".popup-window-button.popup-window-button-accept")
+    public WebElement addBtn;
+
+    @FindBy(xpath = "//a[@title='HR Department']")
+    public WebElement newDeptDisplayed;
+
+    @FindBy(id = "user-block")
+    public WebElement userID;
 
 
 
