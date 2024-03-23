@@ -1,4 +1,4 @@
-  @B32G1-248
+@B32G1-248
   Feature:user should be able to access the Employees page.
 
   User Story:As a user, I should be able to access the Employees page;
