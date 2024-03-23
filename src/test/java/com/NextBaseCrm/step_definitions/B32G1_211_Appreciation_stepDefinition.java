@@ -1,6 +1,7 @@
 package com.NextBaseCrm.step_definitions;
 
 import com.NextBaseCrm.pages.B32G1_211_AppreciationPage;
+import com.NextBaseCrm.utilities.BrowserUtils;
 import com.NextBaseCrm.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,7 +19,7 @@ public class B32G1_211_Appreciation_stepDefinition {
     public void user_is_on_the_appreciation_page() {
         Driver.getDriver().get("https://login1.nextbasecrm.com/");
 
-//----------------------Authorization--------------------------------
+//----------------------Background--------------------------------
         Driver.getDriver().findElement(By.name("USER_LOGIN"))
                 .sendKeys("marketing101@cydeo.com");
         Driver.getDriver().findElement(By.name("USER_PASSWORD"))
@@ -36,22 +37,55 @@ public class B32G1_211_Appreciation_stepDefinition {
         Assert.assertTrue(appreciationPage.allEmployees.isDisplayed());
     }
 
+
+    @Then("user can send an appreciation by filling in the mandatory fields {string}")
+    public void user_can_send_an_appreciation_by_filling_in_the_mandatory_fields(String messageContent) {
+        WebElement iframe = Driver.getDriver().findElement(By.className("bx-editor-iframe"));
+        Driver.getDriver().switchTo().frame(iframe);
+
+        appreciationPage.appreciationText.sendKeys(messageContent);
+        Driver.getDriver().switchTo().parentFrame();
+        appreciationPage.sendBtn.click();
+
+        Assert.assertFalse(appreciationPage.appreciationText.isDisplayed());
+        appreciationPage.deleteComment.click();
+        BrowserUtils.sleep(2);
+    }
+
+
+
+
+    @When("user can send an appreciation by filling in the mandatory fields")
+    public void user_can_send_an_appreciation_by_filling_in_the_mandatory_fields() {
+
+        appreciationPage.sendBtn.click();
+
+        Assert.assertEquals(appreciationPage.appreciationText, appreciationPage.commentCheck.getText());
+
+
+    }
+
+    @When("user should to see Mandatory fields: Message content & To")
+    public void user_should_to_see_mandatory_fields_message_content_to() {
+
+
+    }
+
+
     //----------------------Error messages--------------------------------------
     @When("user should to see Error messages for mandatory fields {string} and {string}")
     public void user_should_to_see_error_messages_for_mandatory_fields_and(String ErrMessageTitle, String ErrSpecifyPerson) {
         appreciationPage.allEmployeesCloseBtn.click();
         appreciationPage.sendBtn.click();
 
-        Assert.assertEquals(ErrSpecifyPerson,appreciationPage.errSpecify.getText());
+        Assert.assertEquals(ErrSpecifyPerson, appreciationPage.errSpecify.getText());
 
         appreciationPage.sendBtn.click();
 
-        Assert.assertEquals(ErrMessageTitle,appreciationPage.errMessage.getText());
+        Assert.assertEquals(ErrMessageTitle, appreciationPage.errMessage.getText());
 
 
     }
-
-
     @Then("verify that the user can cancel sending appreciation at any time before sending")
     public void verify_that_the_user_can_cancel_sending_appreciation_at_any_time_before_sending() {
         WebElement iframe = Driver.getDriver().findElement(By.className("bx-editor-iframe"));
@@ -68,23 +102,5 @@ public class B32G1_211_Appreciation_stepDefinition {
         //Driver.getDriver().switchTo().parentFrame();
 
     }
-
-    @When("user can send an appreciation by filling in the mandatory fields")
-    public void user_can_send_an_appreciation_by_filling_in_the_mandatory_fields() {
-
-        appreciationPage.sendBtn.click();
-
-        Assert.assertEquals(appreciationPage.appreciationText,appreciationPage.commentCheck.getText());
-
-
-    }
-
-    @When("user should to see Mandatory fields: Message content & To")
-    public void user_should_to_see_mandatory_fields_message_content_to() {
-
-
-    }
-
-
 
 }

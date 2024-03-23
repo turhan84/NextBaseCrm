@@ -46,6 +46,9 @@ public class B32G1_211_AppreciationPage {
     @FindBy(xpath = "(//div[@class='feed-post-text-block-inner-inner'])[1]")
     public WebElement commentCheck;
 
+    @FindBy(xpath = "//span[text()='Delete']")
+    public WebElement deleteComment;
+
 
 
 
