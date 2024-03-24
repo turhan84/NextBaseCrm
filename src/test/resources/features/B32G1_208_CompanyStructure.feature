@@ -17,8 +17,9 @@ Feature: Default
 	
 	@B32G1-226
 	Scenario Outline: Verify that the HR user can add a department from the Company Structure
-		Given the user type is "<UserType>"
+		Given the user is "<UserType>"
 		    And the user is on the Company Structure page
+		    When the user navigates to the Employee menu
 		    When the user clicks on the ADD DEPARTMENT button
 		    And the user enters "<DepartmentName>" as the department name
 		    And the user submits the form
@@ -31,12 +32,11 @@ Feature: Default
 	
 	@B32G1-227
 	Scenario Outline:  Verify that the “ADD DEPARTMENT” button is not displayed for Helpdesk and Marketing users 
-		Given the user type is "<UserType>"
+		Given user type is "<UserType>"
 		    And the user is on the Company Structure page
-		    Then the "ADD DEPARTMENT" button should not be displayed
+		    Then the Add Department button should not be displayed
 		
 		    Examples:
 		      | UserType  | Username              | Password |
-		      | HR        | hr21@cydeo.com        | UserUser |
 		      | Marketing | helpdesk21@cydeo.com  | UserUser |
 		      | Helpdesk  | marketing21@cydeo.com | UserUser |
