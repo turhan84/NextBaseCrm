@@ -30,7 +30,7 @@ public class B32G1_208_CompanyStructurePages {
     public List<WebElement> addDepartBtn;
 
     @FindBy(xpath = "//input[@id='NAME']")
-    public WebElement departmentNameBox;
+    public WebElement DepartmentNameBox;
 
     @FindBy(css = ".popup-window-button.popup-window-button-accept")
     public WebElement addBtn;
@@ -41,8 +41,8 @@ public class B32G1_208_CompanyStructurePages {
     @FindBy(id = "user-block")
     public WebElement userID;
 
-    @FindBy(xpath = "//a[@class='webform-small-button webform-small-button-blue webform-small-button-add']")
-    public WebElement addDepartmentButton2;
+    /*@FindBy(xpath = "//a[@class='webform-small-button webform-small-button-blue webform-small-button-add']")
+    public WebElement addDepartmentButton2; */
 
 
 

@@ -85,7 +85,7 @@ public class B32G1_208_CompanyStructureStepDefs {
        // BrowserUtils.sleep(5);
     }
     @When("the user enters {string} as the department name")
-    public void the_user_enters_as_the_department_name(String companyName) {
+    public void the_user_enters_as_the_department_name(String DepartmentName) {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("NAME")));
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
