@@ -28,6 +28,13 @@ public class LogoutPage {
 
 
 
+  public void logOut(){
+      profileName.click();
+      logoutButton.click();
+  }
+
+
+
 }
 
 

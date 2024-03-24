@@ -45,5 +45,26 @@ public class B32G1_201_LoginPage {
     public WebElement checkbox;
 
 
+    public void logInAs (String userType){
+        if (userType.equals("hr")){
+            Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+            username.sendKeys(ConfigurationReader.getProperty("hr_username"));
+            password.sendKeys(ConfigurationReader.getProperty("hr_password"));
+            loginBtn.click();
+        }
+        if (userType.equals("marketing")){
+            Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+            username.sendKeys(ConfigurationReader.getProperty("marketing_username"));
+            password.sendKeys(ConfigurationReader.getProperty("marketing_password"));
+            loginBtn.click();
+        }
+        if (userType.equals("helpDesk")){
+            Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+            username.sendKeys(ConfigurationReader.getProperty("helpDesk_username"));
+            password.sendKeys(ConfigurationReader.getProperty("helpDesk_password"));
+            loginBtn.click();
+        }
+    }
+
 
 }
