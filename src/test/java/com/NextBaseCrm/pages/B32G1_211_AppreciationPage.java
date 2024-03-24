@@ -24,8 +24,6 @@ public class B32G1_211_AppreciationPage {
     @FindBy(css = "button[id='blog-submit-button-save']")
     public WebElement sendBtn;
 
-    @FindBy(css = "div[class='feed-post-text-block']")
-    public WebElement appreciationTextInComment;
 
     @FindBy(xpath = "//span[text()='All employees']")
     public WebElement allEmployees;
@@ -43,15 +41,18 @@ public class B32G1_211_AppreciationPage {
     @FindBy(css = "button[id='blog-submit-button-cancel']")
     public WebElement cancelBtn;
 
-    @FindBy(xpath = "(//div[@class='feed-post-text-block-inner-inner'])[1]")
-    public WebElement commentCheck;
 
-    @FindBy(xpath = "//span[text()='Delete']")
+
+    @FindBy(xpath = "//span[@class='menu-popup-item menu-popup-no-icon ']//*[text()='Delete']")
     public WebElement deleteComment;
 
 
+    @FindBy(xpath = "//div[@class='feed-post-title-block']//*[text()='marketing101@cydeo.com']")
+    public WebElement checkComment;
 
 
+    @FindBy(xpath = "(//span[@class='feed-post-more-text'])[1]")
+    public WebElement moreLink;
 
 
 

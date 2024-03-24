@@ -7,10 +7,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class B32G1_211_Appreciation_stepDefinition {
+
+
 
 
     B32G1_211_AppreciationPage appreciationPage = new B32G1_211_AppreciationPage();
@@ -35,9 +38,10 @@ public class B32G1_211_Appreciation_stepDefinition {
     @Then("user should verify the delivery is All employees by default")
     public void user_should_verify_the_delivery_is_all_employees_by_default() {
         Assert.assertTrue(appreciationPage.allEmployees.isDisplayed());
-    }
+        BrowserUtils.sleep(2);
 
 
+}
     @Then("user can send an appreciation by filling in the mandatory fields {string}")
     public void user_can_send_an_appreciation_by_filling_in_the_mandatory_fields(String messageContent) {
         WebElement iframe = Driver.getDriver().findElement(By.className("bx-editor-iframe"));
@@ -47,27 +51,20 @@ public class B32G1_211_Appreciation_stepDefinition {
         Driver.getDriver().switchTo().parentFrame();
         appreciationPage.sendBtn.click();
 
-        Assert.assertFalse(appreciationPage.appreciationText.isDisplayed());
-        appreciationPage.deleteComment.click();
-        BrowserUtils.sleep(2);
-    }
-
-
-
-
-    @When("user can send an appreciation by filling in the mandatory fields")
-    public void user_can_send_an_appreciation_by_filling_in_the_mandatory_fields() {
-
-        appreciationPage.sendBtn.click();
-
-        Assert.assertEquals(appreciationPage.appreciationText, appreciationPage.commentCheck.getText());
-
 
     }
+
 
     @When("user should to see Mandatory fields: Message content & To")
     public void user_should_to_see_mandatory_fields_message_content_to() {
+        Assert.assertTrue(appreciationPage.checkComment.isDisplayed());
 
+
+        appreciationPage.moreLink.click();
+        appreciationPage.deleteComment.click();
+
+        Alert alert=Driver.getDriver().switchTo().alert();
+        alert.accept();
 
     }
 
@@ -99,7 +96,7 @@ public class B32G1_211_Appreciation_stepDefinition {
 
         Driver.getDriver().switchTo().frame(iframe);
         Assert.assertFalse(appreciationPage.appreciationText.isDisplayed());
-        //Driver.getDriver().switchTo().parentFrame();
+
 
     }
 
