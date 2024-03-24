@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class B32G1_208_CompanyStructurePages {
 
     public B32G1_208_CompanyStructurePages(){
@@ -23,8 +25,12 @@ public class B32G1_208_CompanyStructurePages {
 
     public WebElement addDepartmentBtn;
 
+
+    @FindBy(xpath = "//div[@id='pagetitle-menu']//a[@href='javascript:void(0)']")
+    public List<WebElement> addDepartBtn;
+
     @FindBy(xpath = "//input[@id='NAME']")
-    public WebElement departmentNameBox;
+    public WebElement DepartmentNameBox;
 
     @FindBy(css = ".popup-window-button.popup-window-button-accept")
     public WebElement addBtn;
@@ -35,6 +41,8 @@ public class B32G1_208_CompanyStructurePages {
     @FindBy(id = "user-block")
     public WebElement userID;
 
+    /*@FindBy(xpath = "//a[@class='webform-small-button webform-small-button-blue webform-small-button-add']")
+    public WebElement addDepartmentButton2; */
 
 
 
