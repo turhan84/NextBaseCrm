@@ -3,6 +3,7 @@ package com.NextBaseCrm.step_definitions;
 import com.NextBaseCrm.pages.B32G1_206_LinkInMessagePage;
 import com.NextBaseCrm.utilities.BrowserUtils;
 import com.NextBaseCrm.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -36,6 +37,7 @@ public class B32G1_206_LinkInMessage_StepDef {
     @Then("user clicks send button")
     public void user_clicks_send_button() {
         linkInMessagePage.sendBtn.click();
+        BrowserUtils.sleep(1);
     }
 
     @When("user clicks the text")
@@ -61,16 +63,16 @@ public class B32G1_206_LinkInMessage_StepDef {
 
     }
 
-    @Then("verify the link opened in a new tab")
-    public void verify_the_link_opened_in_a_new_tab() {
 
+    @And("verify the link opened in a new tab {string}")
+    public void verifyTheLinkOpenedInANewTab(String text) {
         Set<String> browserTabs = Driver.getDriver().getWindowHandles();
         for (String each : browserTabs) {
 
             Driver.getDriver().switchTo().window(each);
             System.out.println(each);
 
-            if (Driver.getDriver().getCurrentUrl().contains("BMW")){
+            if (Driver.getDriver().getCurrentUrl().contains(text)){
                 break;
 
             }
@@ -79,8 +81,7 @@ public class B32G1_206_LinkInMessage_StepDef {
         }
         BrowserUtils.sleep(3);
 
+
+
     }
-
-
-
 }
