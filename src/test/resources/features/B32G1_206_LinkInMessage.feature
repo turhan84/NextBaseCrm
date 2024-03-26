@@ -15,21 +15,21 @@ Feature: As a user I should be able to add link in message
     Given the user is logged in to the app
     When user clicks the message section
     Then user should be able to click the link button
-    And user should be able to fill "Tesla" and "www.tesla.com" section
+    And user should be able to fill "MERCEDES" and "www.MERCEDES.com" section
     And user should be able to click save button
     And user clicks send button
     When user clicks the text
-    Then user should navigate to the correct "Tesla"
+    Then user should navigate to the correct "Mercedes"
 
   Scenario: Verify that the link is opened in a new tab.
     Given the user is logged in to the app
     When user clicks the message section
     Then user should be able to click the link button
-    And user should be able to fill "BMW" and "www.bmw.com" section
+    And user should be able to fill "BMW" and "www.BMW.com" section
     And user should be able to click save button
     And user clicks send button
     When user clicks the text
     Then user should navigate to the correct "BMW"
-    And verify the link opened in a new tab
+    And verify the link opened in a new tab "BMW"
 
 
