@@ -64,24 +64,9 @@ public class B32G1_206_LinkInMessage_StepDef {
     }
 
 
-    @And("verify the link opened in a new tab {string}")
-    public void verifyTheLinkOpenedInANewTab(String text) {
-        Set<String> browserTabs = Driver.getDriver().getWindowHandles();
-        for (String each : browserTabs) {
-
-            Driver.getDriver().switchTo().window(each);
-            System.out.println(each);
-
-            if (Driver.getDriver().getCurrentUrl().contains(text)){
-                break;
-
-            }
-            System.out.println("Current URL: " + Driver.getDriver().getCurrentUrl());
-
-        }
-        BrowserUtils.sleep(3);
-
-
+    @And("verify the link opened in a new tab")
+    public void verifyTheLinkOpenedInANewTab() {
+        Assert.assertTrue(Driver.getDriver().getWindowHandles().size()>1);
 
     }
 }
