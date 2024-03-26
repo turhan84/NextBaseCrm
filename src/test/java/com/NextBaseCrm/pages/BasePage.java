@@ -98,6 +98,15 @@ public abstract class BasePage {
 //            BrowserUtils.waitForStaleElement(Driver.get().findElement(By.xpath(moduleLocator)));
             BrowserUtils.clickWithTimeOut(Driver.getDriver().findElement(By.xpath(moduleLocator)),  5);
         }
-    }
 
+    }
+    public void selectOption(String option){
+
+        String locator=  "(//td[@class='bx-layout-inner-left'])[1]//li//a[contains(.,'"+option+"')]";
+
+        WebElement optionEl = Driver.getDriver().findElement(By.xpath(locator));
+        optionEl.click();
+
+
+    }
 }
