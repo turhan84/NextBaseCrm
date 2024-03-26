@@ -126,7 +126,7 @@ public class B32G1_201_LoginStepDefs {
         login.password.sendKeys(ConfigurationReader.getProperty("hr_password"));
         login.loginBtn.click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("errortext")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='login-popup']//div[@class='errortext']")));
         String actualErrorMessage = login.errorMessage.getText();
         Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
 
