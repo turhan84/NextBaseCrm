@@ -82,7 +82,7 @@ public class B32G1_201_LoginStepDefs {
 
     @When("The user enters an invalid username {string} and an invalid password {string}")
     public void the_user_enters_an_invalid_username_and_an_invalid_password(String invalidUserName, String invalidPassword) {
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         login.username.sendKeys(ConfigurationReader.getProperty("invalidUsername"));
         login.password.sendKeys(ConfigurationReader.getProperty("invalidPassword"));
         login.loginBtn.click();
@@ -92,6 +92,7 @@ public class B32G1_201_LoginStepDefs {
 
     @Then("An {string} error message is displayed")
     public void an_error_message_is_displayed(String expectedErrorMessage) {
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         login.username.sendKeys(ConfigurationReader.getProperty("invalidUsername"));
         login.password.sendKeys(ConfigurationReader.getProperty("invalidPassword"));
         login.loginBtn.click();
@@ -104,7 +105,7 @@ public class B32G1_201_LoginStepDefs {
 
     @When("The user enters a valid username {string} and an invalid password {string}")
     public void the_user_enters_a_valid_username_and_an_invalid_password(String userName, String password) {
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         login.username.sendKeys(ConfigurationReader.getProperty("hr_username"));
         login.password.sendKeys(ConfigurationReader.getProperty("invalidPassword"));
         login.loginBtn.click();
@@ -113,7 +114,7 @@ public class B32G1_201_LoginStepDefs {
 
     @When("The user attempts to login with an empty username or password")
     public void the_user_attempts_to_login_with_an_empty_username_or_password() {
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         login.password.sendKeys(ConfigurationReader.getProperty("hr_password"));
         login.loginBtn.click();
 
@@ -121,7 +122,7 @@ public class B32G1_201_LoginStepDefs {
 
     @Then("A {string} error message is displayed for the empty field")
     public void a_error_message_is_displayed_for_the_empty_field(String expectedErrorMessage) {
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         login.password.sendKeys(ConfigurationReader.getProperty("hr_password"));
         login.loginBtn.click();
 
@@ -133,7 +134,7 @@ public class B32G1_201_LoginStepDefs {
 
     @Then("The {string} option is visible and clickable")
     public void the_option_is_visible_and_clickable(String string) {
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         login.checkbox.isDisplayed();
 
     }
@@ -141,7 +142,7 @@ public class B32G1_201_LoginStepDefs {
 
     @Then("The password is displayed in bullet signs")
     public void the_password_is_displayed_in_bullet_signs() {
-
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         WebElement passwordField = Driver.getDriver().findElement(By.cssSelector(".login-item input[type='password']"));
         String inputType = passwordField.getAttribute("type");
         Assert.assertEquals("password", inputType.toLowerCase());
