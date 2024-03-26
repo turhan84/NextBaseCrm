@@ -34,7 +34,7 @@ Feature: Default
 	Scenario Outline:  Verify that the “ADD DEPARTMENT” button is not displayed for Helpdesk and Marketing users 
 		Given user type is "<UserType>"
 		    And the user is on the Company Structure page
-		    Then the "ADD DEPARTMENT" button should not be displayed
+		    Then the Add Department button should not be displayed
 		
 		    Examples:
 		      | UserType  | Username              | Password |
