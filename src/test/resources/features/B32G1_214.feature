@@ -1,7 +1,7 @@
 Feature: Company Items Features
 
   Scenario: Verify Company Menu Items
-    Given the user logged in with username as "helpdesk20@cydeo.com" and password as "UserUser"
+    Given the user is logged in to the app
     When user clicks on CRM24 Menu Button
     Then user verifies that company menu contains the options below
       | Official Information |
