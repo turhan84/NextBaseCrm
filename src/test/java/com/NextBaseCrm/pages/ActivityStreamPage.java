@@ -20,6 +20,7 @@ public class ActivityStreamPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    B32G1_201_LoginPage loginPage = new B32G1_201_LoginPage();
 
     @FindBy(linkText = "Activity Stream")
     public WebElement activityStreamBtn;
@@ -126,6 +127,17 @@ public class ActivityStreamPage {
 
 
     }
+
+    public void login(String userType) {
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        String username = ConfigurationReader.getProperty(userType + "_username");
+        String password = ConfigurationReader.getProperty(userType + "_password");
+        loginPage.username.sendKeys(username);
+        loginPage.password.sendKeys(password);
+        loginPage.loginBtn.click();
+
+    }
+
 
 
 }

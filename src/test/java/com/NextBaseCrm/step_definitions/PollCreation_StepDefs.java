@@ -3,6 +3,7 @@ package com.NextBaseCrm.step_definitions;
 import com.NextBaseCrm.pages.ActivityStreamPage;
 import com.NextBaseCrm.utilities.BrowserUtils;
 import com.NextBaseCrm.utilities.Driver;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.hu.De;
@@ -27,6 +28,15 @@ public class PollCreation_StepDefs {
     String question = "";
 
     //B32G1-210_pollCreation.feature
+
+    @Given("the user is logged in to the app as user {string}")
+    public void the_user_is_logged_in_to_the_app_as_user(String userType) {
+
+        streamPage.login(userType);
+        wait.until(ExpectedConditions.titleContains("Portal"));
+
+    }
+
 
     @When("the user navigates to the Poll tab under Activity Stream")
     public void the_user_navigates_to_the_poll_tab_under_activity_stream() {
@@ -144,6 +154,8 @@ public class PollCreation_StepDefs {
 
     @Then("the error message {string}...{string} should be displayed")
     public void the_error_message_should_be_displayed(String errorText_1, String errorText_2) {
+
+        wait.until(ExpectedConditions.visibilityOf(streamPage.feedAddInfoText));
 
         String expectedErrorText = errorText_1 + "\"" + question + "\"" + errorText_2;
 
